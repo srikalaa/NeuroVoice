@@ -237,7 +237,7 @@ async function analyzeAudio() {
     const formData = new FormData();
     formData.append('file', window._audioFile);
 
-    const response = await fetch('https://speechdexx.onrender.com/predict', {
+    const response = await fetch(' https://neurovoice-production.up.railway.app ', {
       method: 'POST',
       body: formData
     });
