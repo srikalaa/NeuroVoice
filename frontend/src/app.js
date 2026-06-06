@@ -2906,7 +2906,7 @@ window.loginUser = async function () {
   try {
 
     const response = await fetch(
-      'http://127.0.0.1:5000/login',
+      'https://neurovoice-production.up.railway.app/login',
       {
         method: 'POST',
 
@@ -2984,7 +2984,7 @@ window.registerUser = async function () {
 
     const response =
       await fetch(
-        'http://127.0.0.1:5000/register',
+        'https://neurovoice-production.up.railway.app/register',
         {
           method: 'POST',
 
