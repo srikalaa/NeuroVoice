@@ -356,7 +356,7 @@ window.savePatient = async function () {
 
     const response =
       await fetch(
-        'http://127.0.0.1:5000/add_patient',
+        'https://neurovoice-production.up.railway.app/add_patient',
         {
           method: 'POST',
           headers: {
@@ -390,7 +390,7 @@ window.savePatient = async function () {
 
       if (pendingScore !== null && pendingScore !== undefined) {
         try {
-          const reportResp = await fetch('http://127.0.0.1:5000/save_report', {
+          const reportResp = await fetch('https://neurovoice-production.up.railway.app/save_report', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -446,7 +446,7 @@ async function loadPatients() {
     const doctorId = localStorage.getItem('doctor_id');
     const response =
       await fetch(
-        `http://127.0.0.1:5000/patients?doctor_id=${doctorId}`
+        `https://neurovoice-production.up.railway.app/patients?doctor_id=${doctorId}`
       );
 
     const patients =
@@ -639,7 +639,7 @@ window.viewReports = async function (
 
     const response =
       await fetch(
-        `http://127.0.0.1:5000/patient_reports/${patientId}?doctor_id=${doctorId}`
+        `https://neurovoice-production.up.railway.app/patient_reports/${patientId}?doctor_id=${doctorId}`
       );
 
     if (!response.ok) {
@@ -1856,7 +1856,7 @@ window.analyzeAudio = async () => {
 
     // API CALL
     const response = await fetch(
-      'http://127.0.0.1:5000/predict',
+      'https://neurovoice-production.up.railway.app/predict',
       {
         method: 'POST',
         body: formData
@@ -1904,7 +1904,7 @@ else {
 const activePatientId = localStorage.getItem('patient_id');
 if (activePatientId) {
   await fetch(
-    'http://127.0.0.1:5000/save_report',
+    'https://neurovoice-production.up.railway.app/save_report',
     {
       method: 'POST',
 
@@ -2751,7 +2751,7 @@ window.sendMessage=async()=>{
       text: h.text
     }));
 
-    const response = await fetch('http://127.0.0.1:5000/chat', {
+    const response = await fetch('https://neurovoice-production.up.railway.app/chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
